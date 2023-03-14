@@ -1,0 +1,87 @@
+<<!--<br><br><br>-->
+
+
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+  <h6 class=" add_book mb-3 text-primary text-center  "> Ajouter un livre </h6><br>
+</div>
+<div class="container ">
+  <form action="#" [formGroup]="addBookForm" >
+    <div class="row gutters">
+
+      <div class="">
+        <div class="card-body">
+
+          <div class="row gutters">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label  class="mb-3 mt-3">ISBN</label>
+                <input type="name" class="form-control form-control-lg"  placeholder="ISBN" formControlName="isbn"
+                       [ngClass]="{'is-invalid':addBookForm.get('isbn').pristine && addBookForm.get('isbn').touched}">
+                <div class="invalid-feedback"><span  *ngIf="addBookForm.get('isbn').pristine && addBookForm.get('isbn').touched">Entrez un isbn  valide</span></div>
+
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <label  class="mb-3 mt-3 ">Titre</label>
+                <input type="name" class="form-control form-control-lg"  placeholder="Titre" formControlName="title"
+                       [ngClass]="{'is-invalid':addBookForm.get('title').pristine && addBookForm.get('title').touched}">
+                <div class="invalid-feedback"><span  *ngIf="addBookForm.get('title').pristine && addBookForm.get('title').touched">Entrez un title  valide</span></div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
+              <div class="form-group">
+                <label  class="mb-3 mt-3 ">Auteur</label>
+                <input type="text" class="form-control form-control-lg" placeholder="Auteur" formControlName="author"
+                       [ngClass]="{'is-invalid':addBookForm.get('author').pristine && addBookForm.get('author').touched}">
+                <div class="invalid-feedback"><span  *ngIf="addBookForm.get('author').pristine && addBookForm.get('author').touched">Entrez un auteur   valide</span></div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
+              <div class="form-group">
+                <label class="mb-3 mt-3">Overview</label>
+                <input type="text" class="form-control form-control-lg"  placeholder="Overview" formControlName="overview"
+                       [ngClass]="{'is-invalid':addBookForm.get('overview').pristine && addBookForm.get('overview').touched}">
+                <div class="invalid-feedback"><span  *ngIf="addBookForm.get('overview').pristine && addBookForm.get('overview').touched">Entrez un overview  valide</span></div>
+              </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
+              <div class="form-group">
+                <label  class="mb-3 mt-3">photos</label>
+                <input type="file" class="form-control form-control-lg"  placeholder="photos" formControlName="picture"
+                      (change)="uploadPictureFiles($event)">
+
+                <div *ngIf="errorMessage" style="color: red">{{ errorMessage }}</div>
+                <div class="invalid-feedback"><span  *ngIf="addBookForm.get('picture').pristine && addBookForm.get('picture').touched">Entrez un lien de photos   valide</span></div>
+              </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mb-3">
+              <div class="form-group">
+                <label  class="mb-3 mt-3">Année d'edition</label>
+                <input type="text" class="form-control form-control-lg"  placeholder="Année d'edition" formControlName="editionYears">
+              </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <button type="button"  name="submit" class=" col-12 btn btn-lg btn-secondary  mt-5"  (click)="onRefuse()">Annuler</button>
+
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="form-group">
+                <button type="button"  name="submit" class=" col-12 btn btn-primary  btn-lg mt-5" [disabled]="!addBookForm.valid" (click)="onAccepte()">Ajouter un livre</button>
+              </div>
+            </div>
+          </div><br><br>
+
+          <textarea *ngIf="fileContent" [value]="fileContent"></textarea>
+        </div>
+
+      </div>
+
+    </div>
+  </form>
+</div>

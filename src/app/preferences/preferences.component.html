@@ -1,0 +1,24 @@
+<br><br><table class="table table-striped">
+  <thead>
+  <tr>
+    <th class="en_tete" scope="col">Livre</th>
+    <th class="en_tete" scope="col">Auteur</th>
+    <th class="en_tete" scope="col">Publication</th>
+    <th class="en_tete" scope="col">Disliker</th>
+    <th class="en_tete" scope="col">En Savoir Plus</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor=" let book  of books">
+    <th class="en_tete" scope="col">{{book?.title}}</th>
+    <th class="en_tete" scope="col">{{book?.author}}</th>
+    <th class="en_tete" scope="col">{{book?.publishedDate}}</th>
+    <th class="en_tete" scope="col"><i class="fa fa-heart fa-2x  "   ></i></th>
+    <th class="en_tete" scope="col"><button type="button" class="btn  btn-primary" (click)="getBookInfo(book) "> Overview</button></th>
+
+  </tr>
+  </tbody>
+
+</table>
+

@@ -1,0 +1,70 @@
+.navbar{
+  background-color: #5c98d8;
+  position: sticky;
+  top: 0;
+}
+
+.body{
+
+}
+
+.img{
+  width: 100px;
+  height: 58px;
+}
+
+nav> a{
+  text-decoration: none;
+  display: flex;
+  font-family: "Calibri Light";
+  color: black;
+  font-size:20px;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+.nav{
+  display: flex;
+  gap: 16px;
+}
+
+.nav:hover, home:focus{
+  font-size: 25px;
+  color: #30c3a0;
+  background-color: #1166b9;
+}
+
+.navbar-brand{
+  font-size: 25px;
+}
+
+/*nav >a*/
+/*  :hover{*/
+/*  background-color: #c2c3c4;*/
+/* }*/
+
+
+.box {
+  display: flex;
+}
+
+.d1 {
+  flex: 1;
+}
+
+.d2 {
+  flex: 1;
+  /*margin-left: 50%;*/
+}
+
+.en_tete{
+  background-color: #8194ad;
+}
+
+/*.sticky-top {*/
+/*  position: sticky;*/
+/*  top: 0;*/
+/*  z-index: 10;*/
+/*}*/
+
+
